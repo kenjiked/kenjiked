@@ -24,10 +24,10 @@ export default function Home() {
             Math.abs(photo.width - photo.height) / photo.width < 0.1;
 
           const widthClass = isPortrait
-            ? "max-w-[500px] md:max-w-[550px]"
+            ? "max-w-[360px] md:max-w-[420px]"
             : isSquare
-              ? "max-w-[600px] md:max-w-[700px]"
-              : "max-w-[900px] md:max-w-[1000px]";
+              ? "max-w-[450px] md:max-w-[520px]"
+              : "max-w-[650px] md:max-w-[750px]";
 
           return (
             <div
