@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 
@@ -47,11 +48,15 @@ export default function RootLayout({
       >
         <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm">
           <nav className="max-w-[1400px] mx-auto px-6 py-5 flex items-center justify-between">
-            <Link
-              href="/"
-              className="text-sm font-light tracking-widest"
-            >
-              kenjiked
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="kenjiked"
+                width={120}
+                height={63}
+                className="h-6 w-auto invert"
+                priority
+              />
             </Link>
             <div className="flex gap-8">
               <Link
