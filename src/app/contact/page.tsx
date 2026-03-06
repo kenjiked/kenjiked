@@ -10,10 +10,10 @@ export default function ContactPage() {
       <h1 className="text-lg font-light tracking-wide mb-12">Contact</h1>
       <p className="text-sm font-light">
         <a
-          href="mailto:your-email@example.com"
+          href="mailto:kenjiked.0@icloud.com"
           className="underline underline-offset-4 hover:opacity-50 transition-opacity"
         >
-          your-email@example.com
+          kenjiked.0@icloud.com
         </a>
       </p>
     </div>

@@ -20,10 +20,13 @@ export default function AboutPage() {
       </div>
       <div className="space-y-4 text-sm font-light leading-relaxed text-gray-700">
         <p>
-          ここに自己紹介を書いてください。1〜2段落程度のシンプルな文章が入ります。
+          池田 憲史
         </p>
         <p>
-          写真や文章を通じて、日常の風景や旅先で出会った場面を記録しています。
+          2002年 東京杉並区生まれ
+        </p>
+        <p>
+          Liberal Vision株式会社 代表。飲食経営とLatticeベースのPQC署名を研究中。
         </p>
       </div>
     </div>
