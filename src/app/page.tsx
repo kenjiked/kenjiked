@@ -37,7 +37,7 @@ function PhotoItem({ photo, priority }: { photo: Photo; priority?: boolean }) {
 export default function Home() {
   return (
     <>
-      <div className="w-full">
+      <div className="relative w-full h-[100vh]">
         <video
           autoPlay
           muted
@@ -45,10 +45,20 @@ export default function Home() {
           playsInline
           preload="auto"
           poster="/videos/hero-poster.jpg"
-          className="w-full h-[100vh] object-cover"
+          className="w-full h-full object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Image
+            src="/images/logo.png"
+            alt="kenjiked"
+            width={1280}
+            height={670}
+            className="w-[280px] md:w-[400px] h-auto"
+            priority
+          />
+        </div>
       </div>
       <div className="max-w-[1000px] mx-auto px-8 md:px-12 py-12 md:py-20">
         {(rows as Row[]).map((row, i) => {
