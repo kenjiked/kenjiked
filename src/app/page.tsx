@@ -84,9 +84,27 @@ export default function Home() {
             );
           }
 
+          const photo = row.photos[0];
+          const isPortrait = photo.height > photo.width;
+
           return (
-            <div key={i} className="my-10 md:my-16">
-              <PhotoItem photo={row.photos[0]} priority={i === 0} />
+            <div key={i} className="my-10 md:my-16 flex justify-center">
+              <div className={isPortrait ? "max-h-[75vh]" : "w-full"}>
+                <Image
+                  src={photo.src}
+                  alt={photo.caption}
+                  width={photo.width}
+                  height={photo.height}
+                  className={`h-auto ${isPortrait ? "max-h-[75vh] w-auto" : "w-full"}`}
+                  sizes="(max-width: 768px) 95vw, 800px"
+                  priority={i === 0}
+                />
+                {photo.caption && (
+                  <p className="mt-2 text-right text-[11px] font-light text-gray-400 tracking-wide">
+                    {photo.caption}
+                  </p>
+                )}
+              </div>
             </div>
           );
         })}
