@@ -55,7 +55,7 @@ export default function Home() {
             alt="kenjiked"
             width={1280}
             height={670}
-            className="w-[280px] md:w-[400px] h-auto"
+            className="w-[140px] md:w-[200px] h-auto"
             priority
           />
         </div>
