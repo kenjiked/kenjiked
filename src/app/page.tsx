@@ -15,18 +15,18 @@ type Row = {
 
 function PhotoItem({ photo, priority }: { photo: Photo; priority?: boolean }) {
   return (
-    <div>
+    <div className="relative">
       <Image
         src={photo.src}
         alt={photo.caption}
         width={photo.width}
         height={photo.height}
-        className="w-full h-auto"
-        sizes="(max-width: 768px) 90vw, 50vw"
+        className="w-full h-full object-cover"
+        sizes="(max-width: 768px) 95vw, 800px"
         priority={priority}
       />
       {photo.caption && (
-        <p className="mt-3 text-right text-xs font-light text-gray-400 tracking-wide">
+        <p className="mt-2 text-right text-[11px] font-light text-gray-400 tracking-wide">
           {photo.caption}
         </p>
       )}
@@ -45,47 +45,38 @@ export default function Home() {
           playsInline
           preload="auto"
           poster="/videos/hero-poster.jpg"
-          className="w-full h-[80vh] object-cover"
+          className="w-full h-[100vh] object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="max-w-[1100px] mx-auto px-6">
+      <div className="max-w-[1000px] mx-auto px-8 md:px-12 py-12 md:py-20">
         {(rows as Row[]).map((row, i) => {
           if (row.layout === "pair") {
+            // 2枚の高さを揃えるため、アスペクト比からflex比率を計算
+            const ratios = row.photos.map((p) => p.width / p.height);
+            const totalRatio = ratios.reduce((a, b) => a + b, 0);
+
             return (
               <div
                 key={i}
-                className="my-16 md:my-28 grid grid-cols-2 gap-4 md:gap-6"
+                className="my-10 md:my-16 flex gap-3 md:gap-4"
               >
                 {row.photos.map((photo, j) => (
-                  <PhotoItem key={j} photo={photo} />
+                  <div
+                    key={j}
+                    style={{ flex: `${ratios[j] / totalRatio}` }}
+                  >
+                    <PhotoItem photo={photo} />
+                  </div>
                 ))}
               </div>
             );
           }
 
-          const photo = row.photos[0];
-          const isPortrait = photo.height > photo.width;
-          const isSquare =
-            Math.abs(photo.width - photo.height) / photo.width < 0.1;
-
           return (
-            <div
-              key={i}
-              className="my-16 md:my-28 flex justify-center"
-            >
-              <div
-                className={`w-full ${
-                  isPortrait
-                    ? "max-w-[420px]"
-                    : isSquare
-                      ? "max-w-[520px]"
-                      : "max-w-[900px]"
-                }`}
-              >
-                <PhotoItem photo={photo} priority={i === 0} />
-              </div>
+            <div key={i} className="my-10 md:my-16">
+              <PhotoItem photo={row.photos[0]} priority={i === 0} />
             </div>
           );
         })}
