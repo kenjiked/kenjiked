@@ -54,7 +54,7 @@ export default function RootLayout({
                 alt="kenjiked"
                 width={120}
                 height={63}
-                className="h-5 w-auto invert"
+                className="h-8 w-auto invert"
                 priority
               />
             </Link>
