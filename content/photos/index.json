@@ -45,9 +45,8 @@
     ]
   },
   {
-    "layout": "pair",
+    "layout": "single",
     "photos": [
-      { "src": "/images/cat-sunlight.jpg", "caption": "", "width": 1361, "height": 2048 },
       { "src": "/images/waterfront-pier.jpg", "caption": "", "width": 681, "height": 1024 }
     ]
   },
@@ -58,10 +57,9 @@
     ]
   },
   {
-    "layout": "pair",
+    "layout": "single",
     "photos": [
-      { "src": "/images/pink-cloud-silhouette.jpg", "caption": "", "width": 2048, "height": 2048 },
-      { "src": "/images/indoor-plants.png", "caption": "", "width": 1080, "height": 1080 }
+      { "src": "/images/pink-cloud-silhouette.jpg", "caption": "", "width": 2048, "height": 2048 }
     ]
   }
 ]
