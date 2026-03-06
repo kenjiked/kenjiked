@@ -49,7 +49,7 @@ export default function RootLayout({
           <nav className="max-w-[1400px] mx-auto px-6 py-5 flex items-center justify-between">
             <Link
               href="/"
-              className="text-sm font-light tracking-widest uppercase"
+              className="text-sm font-light tracking-widest"
             >
               kenjiked
             </Link>
