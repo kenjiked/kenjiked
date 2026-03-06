@@ -8,8 +8,8 @@
   {
     "layout": "pair",
     "photos": [
-      { "src": "/images/hillside-path.jpg", "caption": "", "width": 681, "height": 1024 },
-      { "src": "/images/mountain-sea-of-clouds.jpg", "caption": "", "width": 681, "height": 1024 }
+      { "src": "/images/mountain-sea-of-clouds.jpg", "caption": "", "width": 681, "height": 1024 },
+      { "src": "/images/hillside-path.jpg", "caption": "", "width": 681, "height": 1024 }
     ]
   },
   {
