@@ -1,92 +1,67 @@
 [
   {
-    "src": "/images/industrial-sunset.jpg",
-    "caption": "",
-    "width": 1024,
-    "height": 681
+    "layout": "single",
+    "photos": [
+      { "src": "/images/industrial-sunset.jpg", "caption": "", "width": 1024, "height": 681 }
+    ]
   },
   {
-    "src": "/images/mountain-sea-of-clouds.jpg",
-    "caption": "",
-    "width": 681,
-    "height": 1024
+    "layout": "pair",
+    "photos": [
+      { "src": "/images/mountain-sea-of-clouds.jpg", "caption": "", "width": 681, "height": 1024 },
+      { "src": "/images/rooftop-twilight.jpg", "caption": "", "width": 681, "height": 1024 }
+    ]
   },
   {
-    "src": "/images/cape-lighthouse.jpg",
-    "caption": "",
-    "width": 1024,
-    "height": 681
+    "layout": "single",
+    "photos": [
+      { "src": "/images/cape-lighthouse.jpg", "caption": "", "width": 1024, "height": 681 }
+    ]
   },
   {
-    "src": "/images/rooftop-twilight.jpg",
-    "caption": "",
-    "width": 681,
-    "height": 1024
+    "layout": "pair",
+    "photos": [
+      { "src": "/images/hillside-path.jpg", "caption": "", "width": 681, "height": 1024 },
+      { "src": "/images/tokyo-dusk-street.jpg", "caption": "", "width": 681, "height": 1024 }
+    ]
   },
   {
-    "src": "/images/hillside-path.jpg",
-    "caption": "",
-    "width": 681,
-    "height": 1024
+    "layout": "single",
+    "photos": [
+      { "src": "/images/golden-sunset-trees.jpg", "caption": "", "width": 4608, "height": 3456 }
+    ]
   },
   {
-    "src": "/images/tokyo-dusk-street.jpg",
-    "caption": "",
-    "width": 681,
-    "height": 1024
+    "layout": "pair",
+    "photos": [
+      { "src": "/images/firetruck-night.jpg", "caption": "", "width": 1024, "height": 683 },
+      { "src": "/images/scooter-night.jpg", "caption": "", "width": 1024, "height": 683 }
+    ]
   },
   {
-    "src": "/images/golden-sunset-trees.jpg",
-    "caption": "",
-    "width": 4608,
-    "height": 3456
+    "layout": "single",
+    "photos": [
+      { "src": "/images/river-valley.jpg", "caption": "", "width": 4416, "height": 4416 }
+    ]
   },
   {
-    "src": "/images/river-valley.jpg",
-    "caption": "",
-    "width": 4416,
-    "height": 4416
+    "layout": "pair",
+    "photos": [
+      { "src": "/images/cat-sunlight.jpg", "caption": "", "width": 1361, "height": 2048 },
+      { "src": "/images/waterfront-pier.jpg", "caption": "", "width": 681, "height": 1024 }
+    ]
   },
   {
-    "src": "/images/firetruck-night.jpg",
-    "caption": "",
-    "width": 1024,
-    "height": 683
+    "layout": "single",
+    "photos": [
+      { "src": "/images/fallen-tree-road.jpg", "caption": "", "width": 4608, "height": 2898 }
+    ]
   },
   {
-    "src": "/images/scooter-night.jpg",
-    "caption": "",
-    "width": 1024,
-    "height": 683
-  },
-  {
-    "src": "/images/cat-sunlight.jpg",
-    "caption": "",
-    "width": 1361,
-    "height": 2048
-  },
-  {
-    "src": "/images/waterfront-pier.jpg",
-    "caption": "",
-    "width": 681,
-    "height": 1024
-  },
-  {
-    "src": "/images/fallen-tree-road.jpg",
-    "caption": "",
-    "width": 4608,
-    "height": 2898
-  },
-  {
-    "src": "/images/pink-cloud-silhouette.jpg",
-    "caption": "",
-    "width": 2048,
-    "height": 2048
-  },
-  {
-    "src": "/images/indoor-plants.png",
-    "caption": "",
-    "width": 1080,
-    "height": 1080
+    "layout": "pair",
+    "photos": [
+      { "src": "/images/pink-cloud-silhouette.jpg", "caption": "", "width": 2048, "height": 2048 },
+      { "src": "/images/indoor-plants.png", "caption": "", "width": 1080, "height": 1080 }
+    ]
   }
 ]

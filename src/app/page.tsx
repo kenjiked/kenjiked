@@ -1,5 +1,38 @@
 import Image from "next/image";
-import photos from "../../content/photos/index.json";
+import rows from "../../content/photos/index.json";
+
+type Photo = {
+  src: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
+type Row = {
+  layout: "single" | "pair";
+  photos: Photo[];
+};
+
+function PhotoItem({ photo, priority }: { photo: Photo; priority?: boolean }) {
+  return (
+    <div>
+      <Image
+        src={photo.src}
+        alt={photo.caption}
+        width={photo.width}
+        height={photo.height}
+        className="w-full h-auto"
+        sizes="(max-width: 768px) 90vw, 50vw"
+        priority={priority}
+      />
+      {photo.caption && (
+        <p className="mt-3 text-right text-xs font-light text-gray-400 tracking-wide">
+          {photo.caption}
+        </p>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -17,38 +50,41 @@ export default function Home() {
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="flex flex-col items-center">
-        {photos.map((photo, i) => {
+      <div className="max-w-[1100px] mx-auto px-6">
+        {(rows as Row[]).map((row, i) => {
+          if (row.layout === "pair") {
+            return (
+              <div
+                key={i}
+                className="my-16 md:my-28 grid grid-cols-2 gap-4 md:gap-6"
+              >
+                {row.photos.map((photo, j) => (
+                  <PhotoItem key={j} photo={photo} />
+                ))}
+              </div>
+            );
+          }
+
+          const photo = row.photos[0];
           const isPortrait = photo.height > photo.width;
           const isSquare =
             Math.abs(photo.width - photo.height) / photo.width < 0.1;
 
-          const widthClass = isPortrait
-            ? "max-w-[360px] md:max-w-[420px]"
-            : isSquare
-              ? "max-w-[450px] md:max-w-[520px]"
-              : "max-w-[650px] md:max-w-[750px]";
-
           return (
             <div
               key={i}
-              className={`w-full px-6 my-20 md:my-32 flex justify-center`}
+              className="my-16 md:my-28 flex justify-center"
             >
-              <div className={`w-full ${widthClass}`}>
-                <Image
-                  src={photo.src}
-                  alt={photo.caption}
-                  width={photo.width}
-                  height={photo.height}
-                  className="w-full h-auto"
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 60vw, 1000px"
-                  priority={i === 0}
-                />
-                {photo.caption && (
-                  <p className="mt-4 text-right text-xs font-light text-gray-400 tracking-wide">
-                    {photo.caption}
-                  </p>
-                )}
+              <div
+                className={`w-full ${
+                  isPortrait
+                    ? "max-w-[420px]"
+                    : isSquare
+                      ? "max-w-[520px]"
+                      : "max-w-[900px]"
+                }`}
+              >
+                <PhotoItem photo={photo} priority={i === 0} />
               </div>
             </div>
           );
