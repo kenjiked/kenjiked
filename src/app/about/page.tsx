@@ -11,7 +11,7 @@ export default function AboutPage() {
       <h1 className="text-lg font-light tracking-wide mb-12">About</h1>
       <div className="mb-10">
         <Image
-          src="/images/profile.jpg"
+          src="/images/profile.JPG"
           alt="kenjiked"
           width={680}
           height={450}
