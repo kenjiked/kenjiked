@@ -17,27 +17,42 @@ export default function Home() {
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="max-w-[1200px] mx-auto px-6">
-      {photos.map((photo, i) => (
-        <div key={i} className="my-16 md:my-24">
-          <div className="relative w-full">
-            <Image
-              src={photo.src}
-              alt={photo.caption}
-              width={photo.width}
-              height={photo.height}
-              className="w-full h-auto"
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              priority={i === 0}
-            />
-          </div>
-          {photo.caption && (
-            <p className="mt-3 text-right text-xs font-light text-gray-400 tracking-wide">
-              {photo.caption}
-            </p>
-          )}
-        </div>
-      ))}
+      <div className="flex flex-col items-center">
+        {photos.map((photo, i) => {
+          const isPortrait = photo.height > photo.width;
+          const isSquare =
+            Math.abs(photo.width - photo.height) / photo.width < 0.1;
+
+          const widthClass = isPortrait
+            ? "max-w-[500px] md:max-w-[550px]"
+            : isSquare
+              ? "max-w-[600px] md:max-w-[700px]"
+              : "max-w-[900px] md:max-w-[1000px]";
+
+          return (
+            <div
+              key={i}
+              className={`w-full px-6 my-20 md:my-32 flex justify-center`}
+            >
+              <div className={`w-full ${widthClass}`}>
+                <Image
+                  src={photo.src}
+                  alt={photo.caption}
+                  width={photo.width}
+                  height={photo.height}
+                  className="w-full h-auto"
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 60vw, 1000px"
+                  priority={i === 0}
+                />
+                {photo.caption && (
+                  <p className="mt-4 text-right text-xs font-light text-gray-400 tracking-wide">
+                    {photo.caption}
+                  </p>
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );
