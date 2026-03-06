@@ -14,6 +14,13 @@ type Article = {
   image?: string;
 };
 
+function getPlatform(article: Article): { label: string; color: string } {
+  if (!article.url) return { label: "Site", color: "bg-black" };
+  if (article.url.includes("qiita.com")) return { label: "Qiita", color: "bg-[#55C500]" };
+  if (article.url.includes("note.com")) return { label: "note", color: "bg-[#9b9b9b]" };
+  return { label: "Link", color: "bg-[#9b9b9b]" };
+}
+
 export default function WritingPage() {
   const sorted = (articles as Article[]).sort((a, b) =>
     a.date > b.date ? -1 : 1
@@ -46,12 +53,10 @@ export default function WritingPage() {
                     />
                   </div>
                 )}
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="text-sm font-light group-hover:opacity-50 transition-opacity">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="flex items-center gap-2 text-sm font-light group-hover:opacity-50 transition-opacity">
+                    <span className={`inline-block w-2 h-2 rounded-full shrink-0 ${getPlatform(article).color}`} />
                     {article.title}
-                    {isExternal && (
-                      <span className="ml-2 text-xs text-gray-400">↗</span>
-                    )}
                   </span>
                   <span className="text-xs font-light text-gray-400 shrink-0">
                     {article.date}
