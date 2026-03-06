@@ -3,7 +3,21 @@ import photos from "../../content/photos/index.json";
 
 export default function Home() {
   return (
-    <div className="max-w-[1200px] mx-auto px-6">
+    <>
+      <div className="w-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/videos/hero-poster.jpg"
+          className="w-full h-[80vh] object-cover"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="max-w-[1200px] mx-auto px-6">
       {photos.map((photo, i) => (
         <div key={i} className="my-16 md:my-24">
           <div className="relative w-full">
@@ -24,6 +38,7 @@ export default function Home() {
           )}
         </div>
       ))}
-    </div>
+      </div>
+    </>
   );
 }
