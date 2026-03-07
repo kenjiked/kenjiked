@@ -68,18 +68,26 @@ export default function Home() {
             const totalRatio = ratios.reduce((a, b) => a + b, 0);
 
             return (
-              <div
-                key={i}
-                className="my-10 md:my-16 flex gap-3 md:gap-4"
-              >
-                {row.photos.map((photo, j) => (
-                  <div
-                    key={j}
-                    style={{ flex: `${ratios[j] / totalRatio}` }}
-                  >
-                    <PhotoItem photo={photo} />
-                  </div>
-                ))}
+              <div key={i}>
+                {/* モバイル: 1枚ずつ縦並び */}
+                <div className="md:hidden">
+                  {row.photos.map((photo, j) => (
+                    <div key={j} className="my-10">
+                      <PhotoItem photo={photo} />
+                    </div>
+                  ))}
+                </div>
+                {/* デスクトップ: 横並び */}
+                <div className="hidden md:flex my-16 gap-4">
+                  {row.photos.map((photo, j) => (
+                    <div
+                      key={j}
+                      style={{ flex: `${ratios[j] / totalRatio}` }}
+                    >
+                      <PhotoItem photo={photo} />
+                    </div>
+                  ))}
+                </div>
               </div>
             );
           }
