@@ -23,10 +23,10 @@ export default function AboutPage() {
           池田 憲史
         </p>
         <p>
-          2002年 東京杉並区生まれ
+          2002年、東京生まれ。2023年にLiberal Vision株式会社を設立。
         </p>
         <p>
-          Liberal Vision株式会社 代表。飲食経営とLatticeベースのPQC署名を研究中。
+          飲食店の経営に携わりながら、ポスト量子暗号 (Rust/UEFI実装)、四足歩行ロボット × 自律巡回ドローン (Nomad Dock)、屋内点検ソリューション、ドローン空撮の領域を並行して動かしている。
         </p>
       </div>
     </div>
