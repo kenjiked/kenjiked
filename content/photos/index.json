@@ -1,5 +1,36 @@
 [
   {
+    "layout": "pair",
+    "photos": [
+      { "src": "/images/drift-ice-coast.jpg", "caption": "", "width": 1536, "height": 2048 },
+      { "src": "/images/drift-ice-harbor.jpg", "caption": "", "width": 1536, "height": 2048 }
+    ]
+  },
+  {
+    "layout": "single",
+    "photos": [
+      { "src": "/images/frozen-lake-edge.jpg", "caption": "", "width": 2048, "height": 1536 }
+    ]
+  },
+  {
+    "layout": "single",
+    "photos": [
+      { "src": "/images/frozen-lake-shore.jpg", "caption": "", "width": 2048, "height": 1536 }
+    ]
+  },
+  {
+    "layout": "single",
+    "photos": [
+      { "src": "/images/phuket-sun-through-hand.jpg", "caption": "", "width": 2400, "height": 1597 }
+    ]
+  },
+  {
+    "layout": "single",
+    "photos": [
+      { "src": "/images/phuket-sunset-feet.jpg", "caption": "", "width": 1207, "height": 2048 }
+    ]
+  },
+  {
     "layout": "single",
     "photos": [
       { "src": "/images/fallen-tree-road.jpg", "caption": "", "width": 4608, "height": 2898 }
