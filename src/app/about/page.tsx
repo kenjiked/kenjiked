@@ -37,7 +37,7 @@ export default function AboutPage() {
         </p>
         <p>
           <span className="font-normal text-gray-900">Nomad Dock</span>
-          ：Unitree Go2 と自律ドローンを組み合わせた屋内点検システム。ROS 2 + Nav2 + MuJoCo による自律巡回プラットフォームを 4 人チームで開発中 (go2_nav2)。
+          ：Unitree Go2 と自律ドローンを組み合わせた屋内点検システム。ROS 2 / Nav2 を用いた四足ロボットの自律移動 PoC 開発を 4 人チームで推進 (go2_nav2、MuJoCo 上でシミュレーション)。
         </p>
         <p>
           <span className="font-normal text-gray-900">ポスト量子暗号</span>
